@@ -22,7 +22,13 @@ ext.Dependencies = [
 	GRADLE                 : "com.android.tools.build:gradle:${Versions.GRADLE}",
 	MATERIAL               : "com.google.android.material:material:${Versions.MATERIAL}",
 	CORE                   : "androidx.core:core-ktx:${Versions.CORE}",
+	ANDROIDX_CORE          : "androidx.core:core-ktx:${Versions.ANDROIDX_CORE}",
 	APP_COMPAT             : "androidx.appcompat:appcompat:${Versions.APP_COMPAT}",
+	CONSTRAINT_LAYOUT      : "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}",
+	RECYCLER_VIEW          : "androidx.recyclerview:recyclerview:${Versions.RECYCLER_VIEW}",
+	FRAGMENT               : "androidx.fragment:fragment-ktx:${Versions.FRAGMENT}",
 
-	GLIDE                  : "com.github.skydoves:landscapist-glide:${Versions.GLIDE}"
+	GLIDE                  : "com.github.skydoves:landscapist-glide:${Versions.GLIDE}",
+
+	CICERONE               : "com.github.terrakok:cicerone:${Versions.CICERONE}"
 ]
