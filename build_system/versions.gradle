@@ -1,0 +1,16 @@
+ext.Versions = [
+	KOTLIN                   : "1.6.10",
+	COROUTINES               : "1.6.0",
+	GRADLE                   : '7.1.2',
+	CORE                     : "1.7.0",
+	APP_COMPAT               : "1.4.1",
+	ROOM                     : "2.4.1",
+	KOIN                     : "3.1.5",
+	RETROFIT                 : "2.9.0",
+	OKHTTP                   : "4.9.0",
+	GSON                     : "2.9.0",
+	SQLITE                   : "3.36.0.3",
+	MATERIAL                 : "1.5.0",
+	MOSHI                    : "1.13.0",
+	GLIDE                    : "1.4.5"
+]
