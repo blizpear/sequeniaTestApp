@@ -1,0 +1,32 @@
+apply from: "$rootDir/build_system/configs.gradle"
+
+android {
+	compileSdkVersion Configs.COMPILE_SDK
+	buildToolsVersion Configs.BUILD_TOOL_VERSION
+
+	defaultConfig {
+		versionCode Configs.CODE
+		versionName Configs.Name
+		minSdkVersion Configs.MIN_SDK
+		targetSdkVersion Configs.TARGET_SDK
+	}
+
+	buildTypes {
+		release {
+			minifyEnabled false
+		}
+	}
+
+	packagingOptions {
+		exclude 'META-INF/*'
+	}
+
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_11
+		targetCompatibility JavaVersion.VERSION_11
+	}
+
+	kotlinOptions {
+		jvmTarget = Configs.JVM_TARGET
+	}
+}
