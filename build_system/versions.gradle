@@ -1,7 +1,7 @@
 ext.Versions = [
 	KOTLIN                   : "1.6.10",
 	COROUTINES               : "1.6.0",
-	GRADLE                   : '7.1.1',
+	GRADLE                   : '7.1.2',
 	CORE                     : "1.7.0",
 	APP_COMPAT               : "1.4.1",
 	ROOM                     : "2.4.1",
