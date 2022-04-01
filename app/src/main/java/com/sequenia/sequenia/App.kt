@@ -1,9 +1,9 @@
 package com.sequenia.sequenia
 
 import android.app.Application
+import com.sequenia.network.di.networkModule
 import com.sequenia.sequenia.di.appModule
 import com.sequenia.sequenia.di.navigationModule
-import com.sequenia.sequenia.di.routersModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -21,6 +21,7 @@ class App : Application() {
 				appModule,
 				navigationModule,
 				//routersModule,
+				networkModule,
 			)
 		}
 	}
