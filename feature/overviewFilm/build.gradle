@@ -1,0 +1,28 @@
+apply plugin: Plugins.ANDROID_LIBRARY
+apply plugin: Plugins.KOTLIN_ANDROID
+apply plugin: Plugins.KOTLIN_KAPT
+
+apply from: "$rootDir/build_system/androidApplication.gradle"
+
+dependencies {
+
+	implementation Dependencies.RETROFIT
+	implementation Dependencies.MOSHI
+	implementation Dependencies.KOIN_CORE
+	implementation Dependencies.KOIN_ANDROID
+	implementation Dependencies.COROUTINES_CORE
+	implementation Dependencies.APP_COMPAT
+	implementation Dependencies.CICERONE
+	implementation Dependencies.MATERIAL
+	implementation Dependencies.RECYCLER_VIEW
+	implementation Dependencies.GLIDE
+	implementation Dependencies.RECYCLER_VIEW
+	implementation Dependencies.MOXY
+	implementation Dependencies.MOXY_ANDROIDX
+	implementation Dependencies.MOXY_KTX
+	kapt Dependencies.MOXY_COMPILER
+
+	implementation project(":shared:filmsDatabase")
+	implementation project(":shared:network")
+	implementation project(":component:ui")
+}

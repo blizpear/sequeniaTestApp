@@ -12,4 +12,6 @@ dependencies {
 	kapt Dependencies.ROOM_COMPILER
 	implementation Dependencies.ROOM_KTX
 	implementation Dependencies.SQLITE
+	implementation Dependencies.MOXY
+	kapt Dependencies.MOXY_COMPILER
 }

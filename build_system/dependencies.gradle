@@ -30,5 +30,10 @@ ext.Dependencies = [
 
 	GLIDE                  : "com.github.skydoves:landscapist-glide:${Versions.GLIDE}",
 
-	CICERONE               : "com.github.terrakok:cicerone:${Versions.CICERONE}"
+	CICERONE               : "com.github.terrakok:cicerone:${Versions.CICERONE}",
+
+	MOXY                   : "com.github.moxy-community:moxy:${Versions.MOXY}",
+	MOXY_COMPILER          : "com.github.moxy-community:moxy-compiler:${Versions.MOXY}",
+	MOXY_ANDROIDX          : "com.github.moxy-community:moxy-androidx:${Versions.MOXY}",
+	MOXY_KTX               : "com.github.moxy-community:moxy-ktx:${Versions.MOXY}"
 ]
