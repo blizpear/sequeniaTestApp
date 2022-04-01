@@ -1,0 +1,20 @@
+apply plugin: Plugins.ANDROID_LIBRARY
+apply plugin: Plugins.KOTLIN_ANDROID
+
+apply from: "$rootDir/build_system/androidApplication.gradle"
+
+android {
+	defaultConfig {
+		buildConfigField "String", "API_URL",
+			"\"https://s3-eu-west-1.amazonaws.com/sequeniatesttask/\""
+	}
+}
+
+dependencies {
+
+	implementation Dependencies.KOIN_CORE
+	implementation Dependencies.KOIN_ANDROID
+	implementation Dependencies.RETROFIT
+	implementation Dependencies.RETROFIT_MOSHI
+	implementation Dependencies.MOSHI
+}
