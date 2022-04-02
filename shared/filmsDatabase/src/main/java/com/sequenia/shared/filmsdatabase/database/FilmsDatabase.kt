@@ -6,14 +6,14 @@ import com.sequenia.shared.filmsdatabase.dao.FilmGenreCrossRefDao
 import com.sequenia.shared.filmsdatabase.dao.FilmsDao
 import com.sequenia.shared.filmsdatabase.dao.GenreDao
 import com.sequenia.shared.filmsdatabase.dto.FilmDto
-import com.sequenia.shared.filmsdatabase.dto.FilmGenreCrossRef
+import com.sequenia.shared.filmsdatabase.dto.FilmGenreCrossRefDto
 import com.sequenia.shared.filmsdatabase.dto.GenreDto
 
 @Database(
 	entities = [
 		FilmDto::class,
 		GenreDto::class,
-		FilmGenreCrossRef::class
+		FilmGenreCrossRefDto::class
 	],
 	version = 1,
 	exportSchema = false

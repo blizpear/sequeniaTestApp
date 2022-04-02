@@ -6,11 +6,11 @@ import androidx.room.Relation
 
 class FilmWithGenreDto(
 	@Embedded
-	var film: FilmDto,
+	var film: FilmPreviewDto,
 	@Relation(
 		parentColumn = "filmId",
 		entityColumn = "genreId",
-		associateBy = Junction(FilmGenreCrossRef::class)
+		associateBy = Junction(FilmGenreCrossRefDto::class)
 	)
 	var genre: List<GenreDto>
 )
