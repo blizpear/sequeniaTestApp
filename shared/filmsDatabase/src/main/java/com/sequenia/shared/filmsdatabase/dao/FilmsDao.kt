@@ -8,7 +8,7 @@ import androidx.room.RewriteQueriesToDropUnusedColumns
 import androidx.room.Transaction
 import com.sequenia.shared.filmsdatabase.dto.FilmDto
 import com.sequenia.shared.filmsdatabase.dto.FilmPreviewDto
-import com.sequenia.shared.filmsdatabase.dto.FilmWithGenreDto
+import com.sequenia.shared.filmsdatabase.dto.GenreWithFilms
 
 @Dao
 interface FilmsDao {
@@ -19,7 +19,7 @@ interface FilmsDao {
 	@Transaction
 	@RewriteQueriesToDropUnusedColumns
 	@Query("SELECT * FROM films_table, genre_table WHERE filmId = :id")
-	suspend fun getFilmWithGenre(id: Long): FilmWithGenreDto
+	suspend fun getFilmWithGenre(id: Long): GenreWithFilms
 
 	@Query("SELECT filmId, localizedName, imageUrl FROM films_table")
 	suspend fun getPreviewFilms(): List<FilmPreviewDto>
@@ -27,5 +27,5 @@ interface FilmsDao {
 	@Transaction
 	@Query("SELECT genreId FROM genre_table WHERE genreId = :filter")
 	@RewriteQueriesToDropUnusedColumns
-	suspend fun getAllFilmsWithGenreFilter(filter: Long): FilmWithGenreDto
+	suspend fun getAllFilmsWithGenreFilter(filter: Long): GenreWithFilms
 }
