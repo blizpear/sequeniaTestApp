@@ -4,7 +4,7 @@ import com.sequenia.feature.overview.data.models.FilmRemoteInnerModel
 import com.sequenia.feature.overview.domain.entity.FilmPreview
 import com.sequenia.shared.filmsdatabase.dto.FilmDto
 import com.sequenia.shared.filmsdatabase.dto.FilmPreviewDto
-import com.sequenia.shared.filmsdatabase.dto.FilmWithGenreDto
+import com.sequenia.shared.filmsdatabase.dto.GenreWithFilms
 
 fun FilmRemoteInnerModel.toDatabaseEntity() = FilmDto(
 	filmId = id,
@@ -31,4 +31,4 @@ fun FilmDto.toEntity() = FilmPreview(
 @JvmName("toEntityListFilmPreviewDto")
 fun List<FilmPreviewDto>.toEntityList() = map(FilmPreviewDto::toEntity)
 
-fun FilmWithGenreDto.toEntityList() = films.map(FilmDto::toEntity)
+fun GenreWithFilms.toEntityList() = films.map(FilmDto::toEntity)
