@@ -4,6 +4,7 @@ import android.app.Application
 import com.sequenia.network.di.networkModule
 import com.sequenia.sequenia.di.appModule
 import com.sequenia.sequenia.di.navigationModule
+import com.sequenia.sequenia.di.routersModule
 import com.sequenia.shared.filmsdatabase.di.filmDatabaseModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -21,7 +22,7 @@ class App : Application() {
 			modules(
 				appModule,
 				navigationModule,
-				//routersModule,
+				routersModule,
 				networkModule,
 				filmDatabaseModule,
 			)

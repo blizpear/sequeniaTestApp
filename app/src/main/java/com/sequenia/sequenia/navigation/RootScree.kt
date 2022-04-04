@@ -1,3 +1,5 @@
 package com.sequenia.sequenia.navigation
 
-fun provideRootScreen(): Nothing = TODO("Найти рут скрин")
+import com.sequenia.feature.overview.getOverviewFilmScreen
+
+fun provideRootScreen() = getOverviewFilmScreen()
