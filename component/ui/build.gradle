@@ -1,9 +1,14 @@
 apply plugin: Plugins.ANDROID_LIBRARY
 apply plugin: Plugins.KOTLIN_ANDROID
+apply plugin: Plugins.KOTLIN_KAPT
 
 apply from: "$rootDir/build_system/androidApplication.gradle"
 
 dependencies {
 
 	implementation Dependencies.FRAGMENT
+	implementation Dependencies.MOXY
+	implementation Dependencies.MOXY_ANDROIDX
+	implementation Dependencies.MOXY_KTX
+	kapt Dependencies.MOXY_COMPILER
 }
