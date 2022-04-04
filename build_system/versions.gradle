@@ -18,4 +18,5 @@ ext.Versions = [
 	CONSTRAINT_LAYOUT: "2.0.4",
 	FRAGMENT         : "1.4.1",
 	ANDROIDX_CORE    : "1.7.0",
+	MOXY             : "2.2.2"
 ]

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="overview_film_toolbar">Главная</string>
+	<string name="overview_film_retry">Повторить</string>
+	<string name="overview_film_error">Ошибка</string>
+	<string name="overview_film_genre">Жанры</string>
+	<string name="overview_film_films">Фильмы</string>
+</resources>

@@ -17,14 +17,15 @@ interface FilmsDao {
 	suspend fun insert(films: List<FilmDto>)
 
 	@Transaction
-	@Query("SELECT * FROM films_table WHERE filmId = :id")
+	@RewriteQueriesToDropUnusedColumns
+	@Query("SELECT * FROM films_table, genre_table WHERE filmId = :id")
 	suspend fun getFilmWithGenre(id: Long): FilmWithGenreDto
 
 	@Query("SELECT filmId, localizedName, imageUrl FROM films_table")
 	suspend fun getPreviewFilms(): List<FilmPreviewDto>
 
 	@Transaction
-	@Query("SELECT * FROM films_table, genre_table WHERE genreId = :filter")
+	@Query("SELECT genreId FROM genre_table WHERE genreId = :filter")
 	@RewriteQueriesToDropUnusedColumns
-	suspend fun getAllFilmsWithGenreFilter(filter: Long): List<FilmWithGenreDto>
+	suspend fun getAllFilmsWithGenreFilter(filter: Long): FilmWithGenreDto
 }
