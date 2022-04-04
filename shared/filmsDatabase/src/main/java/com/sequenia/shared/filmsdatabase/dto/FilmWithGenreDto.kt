@@ -1,16 +1,14 @@
 package com.sequenia.shared.filmsdatabase.dto
 
-import androidx.room.Embedded
 import androidx.room.Junction
 import androidx.room.Relation
 
-class FilmWithGenreDto(
-	@Embedded
-	var film: FilmPreviewDto,
+data class FilmWithGenreDto(
+	val genreId: Long,
 	@Relation(
-		parentColumn = "filmId",
-		entityColumn = "genreId",
+		parentColumn = "genreId",
+		entityColumn = "filmId",
 		associateBy = Junction(FilmGenreCrossRefDto::class)
 	)
-	var genre: List<GenreDto>
+	val films: List<FilmDto>
 )

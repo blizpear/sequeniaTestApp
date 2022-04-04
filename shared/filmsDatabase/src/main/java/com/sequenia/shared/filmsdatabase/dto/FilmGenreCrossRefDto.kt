@@ -8,6 +8,7 @@ import androidx.room.Entity
 	primaryKeys = ["filmId", "genreId"]
 )
 data class FilmGenreCrossRefDto(
+	@ColumnInfo(index = true)
 	val filmId: Long,
 	@ColumnInfo(index = true)
 	val genreId: Long
