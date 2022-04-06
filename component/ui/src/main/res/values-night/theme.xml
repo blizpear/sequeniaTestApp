@@ -1,0 +1,7 @@
+<resources>
+
+	<style name="Theme.Sequenia"
+		parent="Theme.Sequenia.Base">
+		<item name="android:statusBarColor">@android:color/transparent</item>
+	</style>
+</resources>

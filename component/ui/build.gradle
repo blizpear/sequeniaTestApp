@@ -11,4 +11,6 @@ dependencies {
 	implementation Dependencies.MOXY_ANDROIDX
 	implementation Dependencies.MOXY_KTX
 	kapt Dependencies.MOXY_COMPILER
+
+	implementation Dependencies.MATERIAL
 }

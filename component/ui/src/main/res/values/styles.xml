@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="Theme.Sequenia.Toolbar"
+		parent="Widget.MaterialComponents.Toolbar.PrimarySurface"/>
+
+	<style name="Theme.Sequenia.CardView"
+		parent="Widget.MaterialComponents.CardView">
+
+		<item name="cardCornerRadius">@dimen/medium_corner_radius</item>
+	</style>
+
+	<style name="Theme.Sequenia.DescriptionText">
+		<item name="android:textSize">@dimen/description_text_size</item>
+		<item name="android:textColor">?attr/colorOnSurface</item>
+	</style>
+
+	<style name="Theme.Sequenia.AppBarTitle">
+		<item name="android:layout_marginEnd">@dimen/margin_padding_15dp</item>
+		<item name="android:textSize">@dimen/app_bar_text_size</item>
+		<item name="android:textColor">?attr/colorOnPrimary</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:maxLines">1</item>
+		<item name="android:ellipsize">end</item>
+	</style>
+
+	<style name="Theme.Sequenia.BackButton"
+		parent="Widget.MaterialComponents.Button.TextButton">
+		<item name="icon">@drawable/ic_arrow_back</item>
+		<item name="iconGravity">start</item>
+		<item name="android:minWidth">@dimen/zero_size</item>
+		<item name="android:paddingTop">@dimen/margin_padding_15dp</item>
+		<item name="android:paddingBottom">@dimen/margin_padding_15dp</item>
+		<item name="android:layout_marginRight">@dimen/margin_padding_10dp</item>
+		<item name="cornerRadius">@dimen/large_corner_radius</item>
+		<item name="iconTint">?colorOnPrimary</item>
+		<item name="rippleColor">?colorOnPrimary</item>
+	</style>
+
+	<style name="Theme.Sequenia.HeaderText">
+		<item name="android:textColor">?attr/colorOnSurface</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textSize">@dimen/header_text_size</item>
+	</style>
+
+	<style name="Theme.Sequenia.FilmDescriptionText">
+		<item name="android:textColor">@color/white</item>
+		<item name="android:textSize">16sp</item>
+		<item name="android:padding">@dimen/margin_padding_10dp</item>
+	</style>
+
+	<style name="Theme.Sequenia.GenreFilterCard"
+		parent="Theme.Sequenia.CardView">
+		<item name="android:checkable">true</item>
+		<item name="checkedIcon">@null</item>
+		<item name="cardBackgroundColor">@color/background_card_color</item>
+		<item name="rippleColor">?attr/colorPrimary</item>
+	</style>
+</resources>
