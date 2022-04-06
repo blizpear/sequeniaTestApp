@@ -14,4 +14,5 @@ dependencies {
 	implementation project(":shared:network")
 	implementation project(":shared:filmsDatabase")
 	implementation project(":feature:overviewFilm")
+	implementation project(":feature:detailsFilm")
 }

@@ -1,6 +1,7 @@
 package com.sequenia.sequenia
 
 import android.app.Application
+import com.sequenia.feature.detailsfilm.di.filmDetailsModule
 import com.sequenia.feature.overview.di.overviewModule
 import com.sequenia.network.di.networkModule
 import com.sequenia.sequenia.di.appModule
@@ -26,7 +27,8 @@ class App : Application() {
 				routersModule,
 				networkModule,
 				filmDatabaseModule,
-				overviewModule
+				overviewModule,
+				filmDetailsModule
 			)
 		}
 	}
