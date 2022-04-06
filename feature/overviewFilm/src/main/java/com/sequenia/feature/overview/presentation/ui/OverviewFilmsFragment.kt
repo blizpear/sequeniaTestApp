@@ -50,8 +50,8 @@ class OverviewFilmsFragment : BaseFragment<OverviewFilmsFragmentBinding>(), Over
 		presenter.setFilter(genreId)
 	}
 
-	private fun onFilmClicked(film: FilmPreview) {
-		presenter.navigateToDetailsScreen(film.filmId)
+	private fun onFilmClicked(film: Long) {
+		presenter.navigateToDetailsScreen(film)
 	}
 
 	private fun loadImageForItem(view: ImageView, url: String?) {

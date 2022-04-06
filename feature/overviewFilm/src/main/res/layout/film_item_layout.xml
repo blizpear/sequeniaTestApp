@@ -3,27 +3,30 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="270dp">
+	android:layout_height="@dimen/film_sheet_height"
+	android:layout_marginBottom="@dimen/margin_padding_10dp"
+	android:layout_marginEnd="@dimen/margin_padding_10dp"
+	android:layout_marginStart="@dimen/margin_padding_10dp"
+	style="@style/Theme.Sequenia.CardView">
 
-	<FrameLayout
+	<ImageView
+		android:id="@+id/film_image"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
+		android:layout_height="match_parent"
+		android:adjustViewBounds="true"
+		android:scaleType="centerCrop"
+		tools:src="@color/grey"/>
 
-		<ImageView
-			android:id="@+id/film_image"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			tools:src="@color/grey"/>
-
-		<TextView
-			android:id="@+id/film_name"
-			android:layout_width="match_parent"
-			android:layout_height="70dp"
-			android:layout_gravity="bottom"
-			android:gravity="center"
-			android:background="@color/black_transparent"
-			tools:text="123123123"/>
-
-	</FrameLayout>
+	<TextView
+		android:id="@+id/film_name"
+		android:layout_width="match_parent"
+		android:layout_height="70dp"
+		android:layout_gravity="bottom"
+		android:gravity="center"
+		android:maxLines="2"
+		android:ellipsize="end"
+		android:background="@color/black_transparent"
+		tools:text="123"
+		style="@style/Theme.Sequenia.FilmDescriptionText"/>
 
 </com.google.android.material.card.MaterialCardView>
