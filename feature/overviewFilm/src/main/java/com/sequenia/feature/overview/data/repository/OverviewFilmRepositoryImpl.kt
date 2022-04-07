@@ -6,6 +6,7 @@ import com.sequenia.feature.overview.data.datasource.local.GenreDbDataSource
 import com.sequenia.feature.overview.data.datasource.remote.FilmsRemoteDataSource
 import com.sequenia.feature.overview.data.mappers.filmWithGenreMap
 import com.sequenia.feature.overview.data.mappers.toEntityList
+import com.sequenia.feature.overview.data.mappers.toFilmsEntityList
 import com.sequenia.feature.overview.domain.entity.FilmPreview
 import com.sequenia.feature.overview.domain.entity.Genre
 import com.sequenia.feature.overview.domain.repository.OverviewFilmRepository
@@ -48,7 +49,7 @@ class OverviewFilmRepositoryImpl(
 			if (filter != null) {
 				filmsDbDataSource.get(filter).toEntityList().sortedBy { it.localizedName }
 			} else {
-				filmsDbDataSource.get().toEntityList().sortedBy { it.localizedName }
+				filmsDbDataSource.get().toFilmsEntityList().sortedBy { it.localizedName }
 			}
 		}
 
