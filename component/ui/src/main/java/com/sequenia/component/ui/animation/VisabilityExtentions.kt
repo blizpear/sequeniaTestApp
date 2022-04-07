@@ -13,7 +13,7 @@ fun View.showWithFade() {
 	if (isVisible && alpha == ALPHA_VISIBLE) {
 		return
 	}
-	if (alpha == ALPHA_VISIBLE){
+	if (alpha == ALPHA_VISIBLE) {
 		alpha = ALPHA_INVISIBLE
 	}
 

@@ -93,7 +93,7 @@ class OverviewFilmsFragment : BaseFragment<OverviewFilmsFragmentBinding>(), Over
 		}
 	}
 
-	private fun setListeners(){
+	private fun setListeners() {
 		binding.retryButton.setOnClickListener {
 			presenter.clickOnErrorButton()
 		}

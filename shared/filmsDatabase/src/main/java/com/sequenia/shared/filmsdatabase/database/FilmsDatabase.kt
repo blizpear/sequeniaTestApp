@@ -21,6 +21,7 @@ import com.sequenia.shared.filmsdatabase.dto.GenreDto
 abstract class FilmsDatabase : RoomDatabase() {
 
 	companion object {
+
 		const val DATABASE_NAME = "FILMS_DATABASE"
 	}
 

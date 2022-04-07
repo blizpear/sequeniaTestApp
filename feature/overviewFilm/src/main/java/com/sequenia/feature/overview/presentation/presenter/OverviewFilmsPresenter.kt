@@ -71,7 +71,7 @@ class OverviewFilmsPresenter(
 		}
 	}
 
-	fun clickOnErrorButton(){
+	fun clickOnErrorButton() {
 		viewState.loading()
 		presenterScope.launch(coroutineExceptionHandler) {
 			loadAndUpdateLocalData()
