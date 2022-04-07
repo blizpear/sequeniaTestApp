@@ -26,89 +26,98 @@
 
 	</com.google.android.material.appbar.MaterialToolbar>
 
-	<LinearLayout
-		android:id="@+id/error"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center"
-		android:orientation="vertical"
-		android:visibility="gone">
-
-		<TextView
-			android:id="@+id/error_text"
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<LinearLayout
+			android:id="@+id/error"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:gravity="center"
-			android:text="@string/film_details_error"/>
+			android:layout_gravity="center"
+			android:gravity="center_horizontal"
+			android:orientation="vertical"
+			android:visibility="gone"
+			tools:visibility="visible">
 
-		<Button
-			android:id="@+id/retry_button"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="@string/film_details_retry"/>
-	</LinearLayout>
+			<TextView
+				android:id="@+id/error_text"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:text="@string/film_details_error"
+				style="@style/Theme.Sequenia.DescriptionText"/>
 
-	<LinearLayout
-		android:id="@+id/content"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:orientation="vertical"
-		android:padding="@dimen/margin_padding_5dp">
+			<Button
+				android:id="@+id/retry_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/film_details_retry"
+				style="@style/Theme.Sequenia.RetryButton"/>
+		</LinearLayout>
 
 		<LinearLayout
+			android:id="@+id/content"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="horizontal">
-
-			<ImageView
-				android:id="@+id/film_image"
-				android:layout_width="@dimen/film_image_width"
-				android:layout_height="@dimen/film_image_height"/>
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:padding="@dimen/margin_padding_5dp"
+			tools:visibility="gone">
 
 			<LinearLayout
 				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:orientation="vertical">
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
 
-				<TextView
-					android:id="@+id/film_name"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:paddingBottom="@dimen/margin_padding_15dp"
-					tools:text="123"
-					style="@style/Theme.Sequenia.DescriptionText"/>
+				<ImageView
+					android:id="@+id/film_image"
+					android:layout_width="@dimen/film_image_width"
+					android:layout_height="@dimen/film_image_height"/>
 
-				<TextView
-					android:id="@+id/film_year"
+				<LinearLayout
 					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:paddingBottom="@dimen/margin_padding_15dp"
-					tools:text="123"
-					style="@style/Theme.Sequenia.DescriptionText"/>
+					android:layout_height="match_parent"
+					android:orientation="vertical">
 
-				<TextView
-					android:id="@+id/film_rating"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:paddingBottom="@dimen/margin_padding_15dp"
-					tools:text="123"
-					style="@style/Theme.Sequenia.DescriptionText"/>
+					<TextView
+						android:id="@+id/film_name"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:paddingBottom="@dimen/margin_padding_15dp"
+						tools:text="123"
+						style="@style/Theme.Sequenia.DescriptionText"/>
+
+					<TextView
+						android:id="@+id/film_year"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:paddingBottom="@dimen/margin_padding_15dp"
+						tools:text="123"
+						style="@style/Theme.Sequenia.DescriptionText"/>
+
+					<TextView
+						android:id="@+id/film_rating"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:paddingBottom="@dimen/margin_padding_15dp"
+						tools:text="123"
+						style="@style/Theme.Sequenia.DescriptionText"/>
+				</LinearLayout>
 			</LinearLayout>
+
+			<TextView
+				android:id="@+id/film_description"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:padding="@dimen/margin_padding_10dp"
+				style="@style/Theme.Sequenia.DescriptionText"/>
+
 		</LinearLayout>
 
-		<TextView
-			android:id="@+id/film_description"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:padding="@dimen/margin_padding_10dp"
-			style="@style/Theme.Sequenia.DescriptionText"/>
-
-	</LinearLayout>
-
-	<ProgressBar
-		android:id="@+id/progress_bar"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center"
-		android:visibility="gone"/>
+		<ProgressBar
+			android:id="@+id/progress_bar"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:visibility="gone"/>
+	</FrameLayout>
 </LinearLayout>
