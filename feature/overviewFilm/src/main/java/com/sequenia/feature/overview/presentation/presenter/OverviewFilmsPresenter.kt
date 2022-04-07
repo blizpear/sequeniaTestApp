@@ -25,10 +25,8 @@ class OverviewFilmsPresenter(
 
 	private var selectedGenreId: Long = -1
 
-	private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable: Throwable ->
-		throwable.localizedMessage.takeIf {
-			!it.isNullOrBlank()
-		}?.let { viewState.error(it) } ?: viewState.error()
+	private val coroutineExceptionHandler = CoroutineExceptionHandler { _, _ ->
+		viewState.error()
 	}
 
 	init {
@@ -44,7 +42,6 @@ class OverviewFilmsPresenter(
 	}
 
 	private suspend fun getGenresAndFilms(filter: Long? = null) = coroutineScope {
-		viewState.loading()
 		launch {
 			launch {
 				genres = getGenresUseCase().map { genre ->
