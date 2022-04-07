@@ -28,7 +28,6 @@ fun FilmDto.toEntity() = FilmPreview(
 	imageUrl = imageUrl
 )
 
-@JvmName("toEntityListFilmPreviewDto")
-fun List<FilmPreviewDto>.toEntityList() = map(FilmPreviewDto::toEntity)
+fun List<FilmPreviewDto>.toFilmsEntityList() = map(FilmPreviewDto::toEntity)
 
 fun GenreWithFilms.toEntityList() = films.map(FilmDto::toEntity)

@@ -20,8 +20,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class FilmsAdapter(
-	private val onGenreClickAction: (Long) -> Unit,
-	private val onFilmClickAction: (film: Long) -> Unit,
+	private val onGenreClickAction: (genreId: Long) -> Unit,
+	private val onFilmClickAction: (filmId: Long) -> Unit,
 	private val loadImageAction: (view: ImageView, url: String?) -> Unit
 ) : ListAdapter<FilmOverviewModel, RecyclerView.ViewHolder>(FilmDiffCallback) {
 

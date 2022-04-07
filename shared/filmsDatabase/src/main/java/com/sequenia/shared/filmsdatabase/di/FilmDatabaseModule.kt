@@ -15,7 +15,7 @@ val filmDatabaseModule = module {
 		Room.databaseBuilder(
 			androidContext(),
 			FilmsDatabase::class.java,
-			"films_database"
+			FilmsDatabase.DATABASE_NAME
 		).build()
 	}
 }

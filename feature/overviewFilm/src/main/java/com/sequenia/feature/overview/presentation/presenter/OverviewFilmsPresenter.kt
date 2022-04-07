@@ -71,6 +71,14 @@ class OverviewFilmsPresenter(
 		}
 	}
 
+	fun clickOnErrorButton() {
+		viewState.loading()
+		presenterScope.launch(coroutineExceptionHandler) {
+			loadAndUpdateLocalData()
+			getGenresAndFilms()
+		}
+	}
+
 	fun navigateToDetailsScreen(filmId: Long) {
 		router.navigateToDetailsFilmScreen(filmId)
 	}

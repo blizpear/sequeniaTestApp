@@ -8,7 +8,7 @@ class GenreDbDataSourceImpl(
 ) : GenreDbDataSource {
 
 	override suspend fun get(): List<GenreDto> =
-		dao.getUniqueGenre()
+		dao.getUniqueGenres()
 
 	override suspend fun insert(genres: List<GenreDto>) {
 		dao.insert(genres)

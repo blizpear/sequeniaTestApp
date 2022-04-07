@@ -13,5 +13,5 @@ interface GenreDao {
 	suspend fun insert(genresList: List<GenreDto>)
 
 	@Query("SELECT DISTINCT * FROM genre_table")
-	suspend fun getUniqueGenre(): List<GenreDto>
+	suspend fun getUniqueGenres(): List<GenreDto>
 }

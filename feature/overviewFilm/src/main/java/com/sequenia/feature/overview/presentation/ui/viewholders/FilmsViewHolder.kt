@@ -3,9 +3,7 @@ package com.sequenia.feature.overview.presentation.ui.viewholders
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.sequenia.feature.overview.R
 import com.sequenia.feature.overview.databinding.FilmItemLayoutBinding
 import com.sequenia.feature.overview.domain.entity.FilmPreview
 

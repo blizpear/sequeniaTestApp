@@ -5,7 +5,6 @@ import com.sequenia.feature.detailsfilm.domain.usecase.GetFilmUseCase
 import com.sequenia.feature.detailsfilm.presentation.router.FilmDetailsRouter
 import com.sequenia.feature.detailsfilm.presentation.view.FilmDetailsView
 import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import moxy.MvpPresenter
 import moxy.presenterScope
@@ -24,18 +23,18 @@ class FilmDetailsPresenter(
 	}
 
 	fun init(filmId: Long) {
-		viewState.loading()
-		presenterScope.launch(coroutineExceptionHandler) {
-			loadFilm(filmId)
-			viewState.content(film)
-		}
+		loadFilm(filmId)
 	}
 
-	private suspend fun loadFilm(filmId: Long) = coroutineScope {
+	private fun loadFilm(filmId: Long) {
 		viewState.loading()
-		launch {
-			film = getFilmUseCase(filmId)
-		}.join()
+		presenterScope.launch(coroutineExceptionHandler) {
+			launch {
+				film = getFilmUseCase(filmId)
+
+				viewState.content(film)
+			}
+		}
 	}
 
 	fun navigateBack() {

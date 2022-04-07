@@ -5,9 +5,7 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.AttrRes
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-
 import com.sequenia.feature.overview.databinding.GenreItemLayoutBinding
 import com.sequenia.feature.overview.presentation.model.GenreUi
 
@@ -45,9 +43,9 @@ class GenreViewHolder(
 			onClickAction(genreUi.genre.genreId)
 		}
 	}
-}
 
-private fun getColorFromAttr(context: Context, @AttrRes attr: Int): Int = TypedValue().run {
-	context.theme.resolveAttribute(attr, this, true)
-	data
+	private fun getColorFromAttr(context: Context, @AttrRes attr: Int): Int = TypedValue().run {
+		context.theme.resolveAttribute(attr, this, true)
+		data
+	}
 }
