@@ -29,6 +29,9 @@ class OverviewFilmsFragment : BaseFragment<OverviewFilmsFragmentBinding>(), Over
 	companion object {
 
 		fun getInstance() = OverviewFilmsFragment()
+
+		const val ONE_ELEMENT_IN_ROW = 2
+		const val TWO_ELEMENT_IN_ROW = 1
 	}
 
 	private lateinit var filmsAdapter: FilmsAdapter
@@ -42,16 +45,34 @@ class OverviewFilmsFragment : BaseFragment<OverviewFilmsFragmentBinding>(), Over
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 
+		setAdapter()
+	}
+
+	private fun setAdapter() {
 		filmsAdapter = FilmsAdapter(::onGenreClicked, ::onFilmClicked, ::loadImageForItem)
 		binding.content.adapter = filmsAdapter
+
+		val manager = GridLayoutManager(requireContext(), 2)
+		manager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+			override fun getSpanSize(position: Int): Int {
+				return when (val viewType = filmsAdapter.getItemViewType(position)) {
+					ItemViewType.HEADER.type -> ONE_ELEMENT_IN_ROW
+					ItemViewType.GENRE.type  -> ONE_ELEMENT_IN_ROW
+					ItemViewType.FILM.type   -> TWO_ELEMENT_IN_ROW
+					else                     -> throw IllegalStateException("Unknown viewType $viewType")
+				}
+			}
+		}
+
+		binding.content.layoutManager = manager
 	}
 
 	private fun onGenreClicked(genreId: Long) {
 		presenter.setFilter(genreId)
 	}
 
-	private fun onFilmClicked(film: Long) {
-		presenter.navigateToDetailsScreen(film)
+	private fun onFilmClicked(filmId: Long) {
+		presenter.navigateToDetailsScreen(filmId)
 	}
 
 	private fun loadImageForItem(view: ImageView, url: String?) {
@@ -74,27 +95,31 @@ class OverviewFilmsFragment : BaseFragment<OverviewFilmsFragmentBinding>(), Over
 	override fun loading() {
 		binding.error.hideWithFade()
 		binding.content.hideWithFade()
+
 		binding.progressBar.showWithFade()
 	}
 
 	override fun error() {
-		binding.error.showWithFade()
 		binding.content.hideWithFade()
 		binding.progressBar.hideWithFade()
+
+		binding.error.showWithFade()
 	}
 
 	override fun error(msg: String) {
-		binding.error.showWithFade()
 		binding.content.hideWithFade()
 		binding.progressBar.hideWithFade()
+
+		binding.error.showWithFade()
 
 		binding.errorText.text = msg
 	}
 
 	override fun content(genre: List<GenreUi>, films: List<FilmPreview>) {
 		binding.error.hideWithFade()
-		binding.content.showWithFade()
 		binding.progressBar.hideWithFade()
+
+		binding.content.showWithFade()
 
 		filmsAdapter.submitData(
 			getString(R.string.overview_film_films),
@@ -102,20 +127,6 @@ class OverviewFilmsFragment : BaseFragment<OverviewFilmsFragmentBinding>(), Over
 			getString(R.string.overview_film_genre),
 			genre
 		)
-
-		val manager = GridLayoutManager(requireContext(), 2)
-		manager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
-			override fun getSpanSize(position: Int): Int {
-				return when (val viewType = filmsAdapter.getItemViewType(position)) {
-					ItemViewType.HEADER.type -> 2
-					ItemViewType.GENRE.type  -> 2
-					ItemViewType.FILM.type   -> 1
-					else                     -> throw IllegalStateException("Unknown viewType $viewType")
-				}
-			}
-		}
-
-		binding.content.layoutManager = manager
 	}
 
 	override fun getBinding(inflater: LayoutInflater, container: ViewGroup?): OverviewFilmsFragmentBinding =
