@@ -46,6 +46,7 @@ class OverviewFilmsFragment : BaseFragment<OverviewFilmsFragmentBinding>(), Over
 		super.onViewCreated(view, savedInstanceState)
 
 		setAdapter()
+		setListeners()
 	}
 
 	private fun setAdapter() {
@@ -89,6 +90,12 @@ class OverviewFilmsFragment : BaseFragment<OverviewFilmsFragmentBinding>(), Over
 					com.sequenia.component.ui.R.drawable.ic_placeholder
 				)
 			)
+		}
+	}
+
+	private fun setListeners(){
+		binding.retryButton.setOnClickListener {
+			presenter.clickOnErrorButton()
 		}
 	}
 
