@@ -35,6 +35,8 @@ class FilmDetailsFragment : BaseFragment<FilmDetailsFragmentBinding>(), FilmDeta
 				bundle.filmId = filmId
 				arguments = bundle
 			}
+
+		const val ZERO_LONG = 0L
 	}
 
 	@InjectPresenter
@@ -45,10 +47,18 @@ class FilmDetailsFragment : BaseFragment<FilmDetailsFragmentBinding>(), FilmDeta
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
-		presenter.init(filmId = arguments?.filmId ?: 0L)
 
+		initPresenter()
+		setListeners()
+	}
+
+	private fun initPresenter() {
+		presenter.init(filmId = arguments?.filmId ?: ZERO_LONG)
+	}
+
+	private fun setListeners() {
 		binding.retryButton.setOnClickListener {
-			presenter.init(filmId = arguments?.filmId!!)
+			presenter.init(filmId = arguments?.filmId ?: ZERO_LONG)
 		}
 		binding.backButton.setOnClickListener {
 			presenter.navigateBack()
@@ -58,25 +68,31 @@ class FilmDetailsFragment : BaseFragment<FilmDetailsFragmentBinding>(), FilmDeta
 	override fun loading() {
 		binding.error.hideWithFade()
 		binding.content.hideWithFade()
+
 		binding.progressBar.showWithFade()
 	}
 
 	override fun error() {
-		binding.error.showWithFade()
 		binding.content.hideWithFade()
 		binding.progressBar.hideWithFade()
+
+		binding.error.showWithFade()
 	}
 
 	override fun error(msg: String) {
-		binding.error.showWithFade()
 		binding.content.hideWithFade()
 		binding.progressBar.hideWithFade()
+
+		binding.error.showWithFade()
+
+		binding.errorText.text = msg
 	}
 
 	override fun content(film: Film) {
 		binding.error.hideWithFade()
-		binding.content.showWithFade()
 		binding.progressBar.hideWithFade()
+
+		binding.content.showWithFade()
 
 		with(binding) {
 			titleText.text = film.localizedName
