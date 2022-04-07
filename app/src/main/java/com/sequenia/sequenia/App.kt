@@ -4,7 +4,6 @@ import android.app.Application
 import com.sequenia.feature.detailsfilm.di.filmDetailsModule
 import com.sequenia.feature.overview.di.overviewModule
 import com.sequenia.network.di.networkModule
-import com.sequenia.sequenia.di.appModule
 import com.sequenia.sequenia.di.navigationModule
 import com.sequenia.sequenia.di.routersModule
 import com.sequenia.shared.filmsdatabase.di.filmDatabaseModule
@@ -22,7 +21,6 @@ class App : Application() {
 			androidContext(this@App)
 
 			modules(
-				appModule,
 				navigationModule,
 				routersModule,
 				networkModule,
