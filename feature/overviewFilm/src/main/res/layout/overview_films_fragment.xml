@@ -10,53 +10,56 @@
 		android:id="@+id/toolbar"
 		android:layout_width="match_parent"
 		android:layout_height="?actionBarSize"
-		android:background="@color/blue_main">
+		style="@style/Theme.Sequenia.Toolbar">
 
 		<TextView
 			android:id="@+id/title_text"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="@string/overview_film_toolbar"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent"/>
+			style="@style/Theme.Sequenia.AppBarTitle"/>
 
 	</com.google.android.material.appbar.MaterialToolbar>
 
-	<LinearLayout
-		android:id="@+id/error"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center"
-		android:orientation="vertical"
-		android:visibility="gone">
-
-		<TextView
-			android:id="@+id/error_text"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:gravity="center"
-			android:text="@string/overview_film_error"/>
-
-		<Button
-			android:id="@+id/retry_button"
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<LinearLayout
+			android:id="@+id/error"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="@string/overview_film_retry"/>
-	</LinearLayout>
+			android:layout_gravity="center"
+			android:orientation="vertical"
+			android:visibility="gone">
 
-	<androidx.recyclerview.widget.RecyclerView
-		android:id="@+id/content"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:visibility="gone"
-		app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-		tools:visibility="gone"/>
+			<TextView
+				android:id="@+id/error_text"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:text="@string/overview_film_error"
+				style="@style/Theme.Sequenia.DescriptionText"/>
 
-	<ProgressBar
-		android:id="@+id/progress_bar"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center"
-		android:visibility="gone"/>
+			<Button
+				android:id="@+id/retry_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/overview_film_retry"
+				style="@style/Theme.Sequenia.DescriptionText"/>
+		</LinearLayout>
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/content"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:visibility="gone"
+			tools:visibility="gone"/>
+
+		<ProgressBar
+			android:id="@+id/progress_bar"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:visibility="gone"/>
+	</FrameLayout>
 </LinearLayout>

@@ -24,16 +24,15 @@ class FilmsViewHolder(
 
 	fun bind(
 		film: FilmPreview,
-		onClickAction: (film: FilmPreview) -> Unit,
+		onClickAction: (film: Long) -> Unit,
 		loadImageAction: (view: ImageView, url: String?) -> Unit
 	) {
 		binding.filmName.text = film.localizedName
-		binding.filmName.setTextColor(ContextCompat.getColor(binding.root.context, R.color.white))
 
 		loadImageAction(binding.filmImage, film.imageUrl)
 
 		binding.root.setOnClickListener {
-			onClickAction(film)
+			onClickAction(film.filmId)
 		}
 	}
 }

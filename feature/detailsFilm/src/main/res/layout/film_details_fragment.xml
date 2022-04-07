@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
@@ -10,20 +9,20 @@
 		android:id="@+id/toolbar"
 		android:layout_width="match_parent"
 		android:layout_height="?actionBarSize"
-		android:background="@color/design_default_color_primary">
+		style="@style/Theme.Sequenia.Toolbar">
 
 		<com.google.android.material.button.MaterialButton
 			android:id="@+id/back_button"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content"
+			style="@style/Theme.Sequenia.BackButton"/>
 
 		<TextView
 			android:id="@+id/title_text"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent"/>
+			android:layout_gravity="center"
+			style="@style/Theme.Sequenia.AppBarTitle"/>
 
 	</com.google.android.material.appbar.MaterialToolbar>
 
@@ -53,22 +52,21 @@
 		android:id="@+id/content"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:orientation="vertical">
+		android:orientation="vertical"
+		android:padding="@dimen/margin_padding_5dp">
 
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="horizontal">
 
-			<LinearLayout android:layout_width="wrap_content"
-				android:layout_height="wrap_content">
-				<ImageView
-					android:id="@+id/film_image"
-					android:layout_width="150dp"
-					android:layout_height="150dp"/>
-			</LinearLayout>
+			<ImageView
+				android:id="@+id/film_image"
+				android:layout_width="@dimen/film_image_width"
+				android:layout_height="@dimen/film_image_height"/>
 
-			<LinearLayout android:layout_width="match_parent"
+			<LinearLayout
+				android:layout_width="match_parent"
 				android:layout_height="match_parent"
 				android:orientation="vertical">
 
@@ -76,28 +74,34 @@
 					android:id="@+id/film_name"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:text=""
-					tools:text="123"/>
+					android:paddingBottom="@dimen/margin_padding_15dp"
+					tools:text="123"
+					style="@style/Theme.Sequenia.DescriptionText"/>
 
 				<TextView
 					android:id="@+id/film_year"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:text="@string/film_details_year"/>
+					android:paddingBottom="@dimen/margin_padding_15dp"
+					tools:text="123"
+					style="@style/Theme.Sequenia.DescriptionText"/>
 
 				<TextView
 					android:id="@+id/film_rating"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:text="@string/film_details_rating"/>
-
+					android:paddingBottom="@dimen/margin_padding_15dp"
+					tools:text="123"
+					style="@style/Theme.Sequenia.DescriptionText"/>
 			</LinearLayout>
 		</LinearLayout>
 
 		<TextView
 			android:id="@+id/film_description"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"/>
+			android:layout_height="match_parent"
+			android:padding="@dimen/margin_padding_10dp"
+			style="@style/Theme.Sequenia.DescriptionText"/>
 
 	</LinearLayout>
 

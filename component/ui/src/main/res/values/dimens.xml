@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="margin_padding_5dp">5dp</dimen>
+	<dimen name="margin_padding_10dp">10dp</dimen>
+	<dimen name="margin_padding_15dp">15dp</dimen>
+
+	<dimen name="app_bar_text_size">22sp</dimen>
+	<dimen name="description_text_size">16sp</dimen>
+	<dimen name="header_text_size">16sp</dimen>
+
+	<dimen name="medium_corner_radius">10dp</dimen>
+	<dimen name="large_corner_radius">50dp</dimen>
+
+	<dimen name="medium_corner_size">5%</dimen>
+
+	<dimen name="zero_size">0dp</dimen>
+
+	<dimen name="genre_min_width">150dp</dimen>
+
+	<dimen name="film_sheet_height">270dp</dimen>
+
+	<dimen name="film_image_width">150dp</dimen>
+	<dimen name="film_image_height">150dp</dimen>
+</resources>
