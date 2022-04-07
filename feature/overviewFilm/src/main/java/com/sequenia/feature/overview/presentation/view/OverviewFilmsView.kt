@@ -10,6 +10,5 @@ interface OverviewFilmsView : MvpView {
 
 	fun loading()
 	fun error()
-	fun error(msg: String)
 	fun content(genre: List<GenreUi>, films: List<FilmPreview>)
 }

@@ -79,15 +79,6 @@ class FilmDetailsFragment : BaseFragment<FilmDetailsFragmentBinding>(), FilmDeta
 		binding.error.showWithFade()
 	}
 
-	override fun error(msg: String) {
-		binding.content.hideWithFade()
-		binding.progressBar.hideWithFade()
-
-		binding.error.showWithFade()
-
-		binding.errorText.text = msg
-	}
-
 	override fun content(film: Film) {
 		binding.error.hideWithFade()
 		binding.progressBar.hideWithFade()

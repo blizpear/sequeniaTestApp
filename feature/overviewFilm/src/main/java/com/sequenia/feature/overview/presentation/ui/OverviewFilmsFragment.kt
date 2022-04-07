@@ -113,15 +113,6 @@ class OverviewFilmsFragment : BaseFragment<OverviewFilmsFragmentBinding>(), Over
 		binding.error.showWithFade()
 	}
 
-	override fun error(msg: String) {
-		binding.content.hideWithFade()
-		binding.progressBar.hideWithFade()
-
-		binding.error.showWithFade()
-
-		binding.errorText.text = msg
-	}
-
 	override fun content(genre: List<GenreUi>, films: List<FilmPreview>) {
 		binding.error.hideWithFade()
 		binding.progressBar.hideWithFade()

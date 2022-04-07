@@ -2,7 +2,7 @@
 <resources>
 	<string name="overview_film_toolbar">Главная</string>
 	<string name="overview_film_retry">Повторить</string>
-	<string name="overview_film_error">Ошибка</string>
+	<string name="overview_film_error">Ошибка. Проверьте интернет подключение.</string>
 	<string name="overview_film_genre">Жанры</string>
 	<string name="overview_film_films">Фильмы</string>
 </resources>

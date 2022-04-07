@@ -16,10 +16,8 @@ class FilmDetailsPresenter(
 
 	lateinit var film: Film
 
-	private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable: Throwable ->
-		throwable.localizedMessage.takeIf {
-			!it.isNullOrBlank()
-		}?.let { viewState.error(it) } ?: viewState.error()
+	private val coroutineExceptionHandler = CoroutineExceptionHandler { _, _ ->
+		viewState.error()
 	}
 
 	fun init(filmId: Long) {

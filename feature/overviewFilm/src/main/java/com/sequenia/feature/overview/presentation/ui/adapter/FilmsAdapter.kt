@@ -94,17 +94,14 @@ object FilmDiffCallback : DiffUtil.ItemCallback<FilmOverviewModel>() {
 	override fun areItemsTheSame(
 		oldItem: FilmOverviewModel,
 		newItem: FilmOverviewModel
-	): Boolean {
-		var result = true
-
+	): Boolean =
 		if (oldItem is FilmOverviewModel.Film && newItem is FilmOverviewModel.Film) {
-			result = oldItem.film.filmId == newItem.film.filmId
+			oldItem.film.filmId == newItem.film.filmId
 		} else if (oldItem is FilmOverviewModel.Genre && newItem is FilmOverviewModel.Genre) {
-			result = oldItem.genreUi.genre.genreId == newItem.genreUi.genre.genreId
-		}
-
-		return result
-	}
+			oldItem.genreUi.genre.genreId == newItem.genreUi.genre.genreId
+		} else if (oldItem is FilmOverviewModel.Header && newItem is FilmOverviewModel.Header) {
+			oldItem.name == newItem.name
+		} else false
 
 	override fun areContentsTheSame(
 		oldItem: FilmOverviewModel,

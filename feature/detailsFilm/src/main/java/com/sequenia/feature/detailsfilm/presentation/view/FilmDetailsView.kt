@@ -9,6 +9,5 @@ interface FilmDetailsView : MvpView {
 
 	fun loading()
 	fun error()
-	fun error(msg: String)
 	fun content(film: Film)
 }
