@@ -18,8 +18,8 @@ interface FilmsDao {
 	suspend fun insert(films: List<FilmDto>)
 
 	@Transaction
-	@RewriteQueriesToDropUnusedColumns
 	@Query("SELECT * FROM films_table, genre_table WHERE filmId = :id")
+	@RewriteQueriesToDropUnusedColumns
 	suspend fun getFilmWithGenre(id: Long): FilmWithGenresDto
 
 	@Query("SELECT filmId, localizedName, imageUrl FROM films_table")

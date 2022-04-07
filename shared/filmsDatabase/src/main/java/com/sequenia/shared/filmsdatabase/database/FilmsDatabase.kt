@@ -20,6 +20,10 @@ import com.sequenia.shared.filmsdatabase.dto.GenreDto
 )
 abstract class FilmsDatabase : RoomDatabase() {
 
+	companion object {
+		const val DATABASE_NAME = "FILMS_DATABASE"
+	}
+
 	abstract fun filmsDao(): FilmsDao
 	abstract fun genreDao(): GenreDao
 	abstract fun filmGenreCrossRefDao(): FilmGenreCrossRefDao
